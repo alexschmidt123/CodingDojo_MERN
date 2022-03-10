@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const PetForm = () => {
+    const [formInfo,setFormInfo]
     //name
     let [name, setName] = useState("")
 
