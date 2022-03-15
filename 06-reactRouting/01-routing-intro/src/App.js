@@ -9,6 +9,7 @@ import {
 
 import Profile from './components/Profile';
 import People from './components/People';
+import PeopleSearchForm from './components/PeopleSearchForm';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <div className="App">
         <h1>Welcome to Routing Demo</h1>
         <Link to="/">Home</Link> || <Link to="/profile">View My Profile</Link>
+        <PeopleSearchForm></PeopleSearchForm>
         <Switch>
           <Route exact path = "/">
             <p>This is the home page</p>
