@@ -29,24 +29,26 @@ const Box = () => {
 
     return (
         <>
-            <form onSubmit={submitHandler}>
+            <form onSubmit={submitHandler} style={{display: "flex", justifyContent:"center", gap: "30px" }}>
                 <div className="form-group">
-                    <label htmlFor="">Color:</label>
-                    <input type="text" name="" id="" className="form-control" onChange={(e) => { setFavColor(e.target.value) }} value={favColor} />
+                    <label>Color: </label>
+                    <input type="text"  className="form-control" onChange={(e) => { setFavColor(e.target.value) }} value={favColor} />
                 </div>
-                <input type="submit" value="Add Ninja!" className="btn btn-success mt-3" />
+                <input type="submit" value="Add a Box!" className="btn btn-success mt-3" />
             </form>
-            
+        <div style = {{display: "flex", gap: "20px", margin: "20px auto"}}>
             {
                 boxList.map(
                     (box, i) => {
-                    return <div key={i} style={{ backgroundColor: box.favColor, height: "200px", width : "200px", border: box.projectUploaded ? "20px solid gold" : "" }}>
-                                <p>Color: {box.favColor}</p> 
-                                <button onClick={() => deleteBox(i)} className="btn btn-danger">Delete {box.name}</button>
+                    return <div key={i} style={{backgroundColor: box.favColor, height: "200px", width : "200px" }}>
+                                <h3>{box.favColor}</h3> 
+                                <button onClick={() => deleteBox(i)} className="btn btn-danger"><h5>Delete {box.name}</h5></button>
                             </div>
                     }
                 )
             }
+        </div>
+            
         </>
 
     )
