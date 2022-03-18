@@ -23,8 +23,7 @@ export default () => {
         });
     }
 
-    return (
-        <div>
+    return <div>
             {JSON.stringify(state)}
             <div>
                 <label>
@@ -47,5 +46,4 @@ export default () => {
                 </label>
             </div>
         </div>
-    );
 }
