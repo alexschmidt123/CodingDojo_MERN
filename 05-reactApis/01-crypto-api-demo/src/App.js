@@ -9,9 +9,9 @@ function App() {
   return (
     <div className="App">
       <h1>Crypto Coin Viewer</h1>
-      {/* <CoinGenerator></CoinGenerator> */}
-      {/* <CoinGeneratorWithAxios></CoinGeneratorWithAxios> */}
-      <CoinGeneratorWithAxiosAndUseEffect/>
+      <CoinGenerator></CoinGenerator>
+      {/* <CoinGeneratorWithAxios></CoinGeneratorWithAxios>
+      <CoinGeneratorWithAxiosAndUseEffect/> */}
 
 
     </div>
