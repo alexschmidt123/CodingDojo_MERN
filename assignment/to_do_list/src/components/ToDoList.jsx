@@ -15,7 +15,7 @@ const ToDoList = () => {
 
     const deleteToDoList = (i) => {
         let filteredToDoList = ToDoListList.filter((ToDoList, index) => {
-            return index != i;
+            return index !== i;
         })
         setToDoList(filteredToDoList)
     }
@@ -40,10 +40,11 @@ const ToDoList = () => {
                 {
                     ToDoListList.map(
                         (ToDoList, i) => {
-                            return <div class="field-row" key={i} style={{ display: "flex", justifyContent: "center" }}>
-                                
-                                <button style={{ height: "10px", margin: "auto 30px" }} onClick={() => deleteToDoList(i)}>Delete {ToDoList.name}</button><input type="checkbox" onClick = {()=>updateToDoList(i)} id="" name=""/>
-                                <label for ="">{i + 1}.  {ToDoList.Task}</label>
+                            return <div className="field-row" key={i} style={{ display: "flex", justifyContent: "center" }}>
+                        
+                                <input type="checkbox" onClick={()=>updateToDoList(i)} />
+                                <label style={{textDecoration: ToDoList.taskDone && 'line-through'}}>{i + 1}.  {ToDoList.Task}</label>
+                                <button style={{ margin: "auto 30px" }} onClick={() => deleteToDoList(i)}>Delete {ToDoList.name}</button>
                             </div>
                         }
                     )
