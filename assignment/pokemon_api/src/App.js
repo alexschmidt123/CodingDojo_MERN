@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App">
       <h1>APIs Assignments</h1>
-      <PokemonAPI></PokemonAPI>
-      {/* <AxiosPokemonAPI> </AxiosPokemonAPI> */}
+      {/* <PokemonAPI></PokemonAPI> */}
+      <AxiosPokemonAPI> </AxiosPokemonAPI>
 
 
     </div>

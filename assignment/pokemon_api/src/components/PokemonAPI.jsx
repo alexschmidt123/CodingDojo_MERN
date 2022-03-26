@@ -6,7 +6,7 @@ const PokemonAPI = ()=>{
 
 
     const getPokemonsFromAPI = ()=>{
-        fetch("https://pokeapi.co/api/v2/pokemon")
+        fetch("https://pokeapi.co/api/v2/pokemon?offset=0&limit=1125")
             .then((response)=>{
                 return response.json()
             })
@@ -28,7 +28,7 @@ const PokemonAPI = ()=>{
                 pokemonList.map((pokemonObj, index)=>{
                     return <div>
                         <h1>{pokemonObj.name}</h1>
-                        <hr />
+                        <hr/>
                     </div>
                 })
 
