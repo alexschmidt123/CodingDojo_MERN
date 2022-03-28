@@ -1,41 +1,29 @@
 import './App.css';
+import SearchForm from './components/SearchForm';
+import Details from './components/Details';
 import {
-  BrowserRouter, //this allows us to enable routing for the application
-  Switch, //this allows us to tell react which components/elements will show conditionally based on the route
-  Route, //this allows us to specify the route for a component/element
-  Link //just like an anchor tag but it will not reload the whole page
+  BrowserRouter,
+  Link,
+  Switch,
+  Route
 } from "react-router-dom";
 
-import Profile from './components/Profile';
-import People from './components/People';
-import PeopleSearchForm from './components/PeopleSearchForm';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <h1>Welcome to Routing Demo</h1>
-        <Link to="/">Home</Link> || <Link to="/profile">View My Profile</Link>
-        <PeopleSearchForm></PeopleSearchForm>
+      <div className="App container w-75 p-3">
+        <h1>Luke Api Walker Form</h1>
+        <hr/>
+        <SearchForm></SearchForm>
         <Switch>
-          <Route exact path = "/">
-            <p>This is the home page</p>
+          <Route exact path ="/:categories/:id/">
+            <Details></Details>
           </Route>
-          <Route exact path = "/profile">
-            <Profile></Profile>
-          </Route>
-          <Route exact path = "/people/:id/">
-            <People></People>
-          </Route>
-
-          <Route exact path = "/people/:id/:borderColor">
-            <People></People>
-          </Route>
-          
-
         </Switch>
       </div>
     </BrowserRouter>
+      
   );
 }
 
