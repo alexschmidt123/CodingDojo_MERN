@@ -13,7 +13,7 @@ const OneProductDetail = () => {
         axios.get(`http://localhost:8000/api/${_id}`)
             .then(res=>{
                 console.log("res->", res)
-                setInfo(res.data.results);
+                setInfo(res.data.Product);
             })
             .catch(err=>{
                 console.log("err->", err)
@@ -36,12 +36,13 @@ const OneProductDetail = () => {
     return (
         <div>
             <h3>{info.title}</h3>
-            <p>Id: {_id}</p>
+            <p>Id: {info._id}</p>
             <p>Price: ${info.price}</p>
             <p>Descriptions: {info.description}</p>
             <button onClick = {deleteProduct} className='btn btn-danger'>Delete {info.title}</button>
         </div>
     ); 
 };
+
 
 export default OneProductDetail;

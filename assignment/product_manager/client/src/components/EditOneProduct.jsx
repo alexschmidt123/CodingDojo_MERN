@@ -21,11 +21,10 @@ const EditProductForm = (props) => {
     const history = useHistory();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/update/${_id}`)
+        axios.get(`http://localhost:8000/api/${_id}`)
             .then(res => {
                 console.log("res->", res);
-                setProductInfo(res.data.results)
-
+                setProductInfo(res.data.Product);
             })
             .catch(err => {
                 console.log("err->", err);
@@ -33,8 +32,6 @@ const EditProductForm = (props) => {
     }, [])
 
     const changeHandler = (e) => {
-        //e.target.name will be the names of each input on the form input tags
-        //e.target.value represents the information typed on the input
         if (e.target.type === "checkbox") {
             setProductInfo({
                 ...ProductInfo,
@@ -83,7 +80,8 @@ const EditProductForm = (props) => {
                     <label htmlFor="">Description:</label>
                     <input type="text" name="description" id="" className="form-control" onChange={changeHandler} value={ProductInfo.description} />
                 </div>
-                <input type="submit" value="Update Product!" />
+                <br />
+                <input type="submit" className='btn btn-primary' value="Update" />
             </form>
         </div>
     );
